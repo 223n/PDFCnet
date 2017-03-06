@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26206.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDFCnet", "PDFCnet\PDFCnet.csproj", "{E09E9546-30AD-4B13-9D2F-A16C9EB11ACF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDFCnetd", "PDFCnetd\PDFCnetd.csproj", "{06F0F1E4-ED35-426F-8A79-DF259F50361C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E09E9546-30AD-4B13-9D2F-A16C9EB11ACF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E09E9546-30AD-4B13-9D2F-A16C9EB11ACF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E09E9546-30AD-4B13-9D2F-A16C9EB11ACF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E09E9546-30AD-4B13-9D2F-A16C9EB11ACF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06F0F1E4-ED35-426F-8A79-DF259F50361C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06F0F1E4-ED35-426F-8A79-DF259F50361C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06F0F1E4-ED35-426F-8A79-DF259F50361C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06F0F1E4-ED35-426F-8A79-DF259F50361C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
