@@ -8,8 +8,8 @@ PDFCnetは、C#で作られたPDF生成ライブラリです。
 * PDFCnetd   
  * このプロジェクトは、ライブラリ本体です。   
 * PDFCnet
- * このプロジェクトは、PDFCnetdのサンプルプロジェクトです。   
- * 実行フォルダにサンプルPDFを生成します。   
+ * このプロジェクトは、PDFCnetdの実行ファイルです。   
+ * 現在は、実行フォルダにサンプルPDFを生成します。   
      
 ## License    
 MIT License   
