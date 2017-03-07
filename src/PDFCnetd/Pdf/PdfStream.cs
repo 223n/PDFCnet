@@ -6,11 +6,18 @@ using System.Threading.Tasks;
 
 namespace PDFCnetd.Pdf
 {
+    /// <summary>
+    /// Pdf Stream
+    /// </summary>
     public class PdfStream : IPdfElem
     {
 
         #region Constructor
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="value">Stream Value</param>
         public PdfStream(string value) => Value = value;
 
         #endregion
@@ -18,8 +25,6 @@ namespace PDFCnetd.Pdf
         #region Property
 
         public string Value { get; set; }
-
-        public string ClassName { get; } = nameof(PdfStream);
 
         #endregion
 

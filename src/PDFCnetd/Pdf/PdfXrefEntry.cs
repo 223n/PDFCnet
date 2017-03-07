@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 
 namespace PDFCnetd.Pdf
 {
@@ -11,6 +7,12 @@ namespace PDFCnetd.Pdf
 
         #region constructor
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="generation">Generation</param>
+        /// <param name="offset">Offset</param>
+        /// <param name="use">free entry / use entry</param>
         public PdfXrefEntry(int generation, int offset, PdfXrefEntryUse use)
         {
             Generation = generation;
@@ -27,8 +29,6 @@ namespace PDFCnetd.Pdf
         public int Offset { get; set; }
 
         public PdfXrefEntryUse Use { get; set; }
-
-        public string ClassName { get; } = nameof(PdfXref);
 
         #endregion
 

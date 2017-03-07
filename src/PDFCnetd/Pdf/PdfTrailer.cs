@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 
 namespace PDFCnetd.Pdf
 {
+    /// <summary>
+    /// Pdf Trailer
+    /// </summary>
     public class PdfTrailer
     {
 
@@ -27,9 +26,7 @@ namespace PDFCnetd.Pdf
         public PdfInt Size { get; set; }
 
         public PdfInt StartXref { get; set; }
-
-        public string ClassName { get; } = nameof(PdfTrailer);
-
+        
         #endregion
 
         #region Method
@@ -38,7 +35,6 @@ namespace PDFCnetd.Pdf
         {
             var ret = new StringBuilder();
             ret.AppendPdfLine("trailer");
-            ret.AppendPdfLine();
             ret.AppendPdfLine(CreatePdfDic().ToString());
             ret.AppendPdfLine("startxref");
             ret.AppendPdfLine(StartXref.ToString());

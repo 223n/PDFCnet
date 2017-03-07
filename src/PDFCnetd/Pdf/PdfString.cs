@@ -1,18 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace PDFCnetd.Pdf
 {
+    /// <summary>
+    /// Pdf String
+    /// </summary>
     public class PdfString : IPdfElem
     {
 
         #region Constructor
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="value">String Value</param>
         public PdfString(string value) => Value = value;
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="value">String Value</param>
+        /// <param name="isAscii">Is Ascii String</param>
         public PdfString(string value, bool isAscii)
         {
             Value = value;
@@ -24,8 +33,6 @@ namespace PDFCnetd.Pdf
         #region Property
 
         public string Value { get; set; }
-
-        public string ClassName { get; } = nameof(PdfString);
 
         public bool IsAscii { get; set; } = false;
 
@@ -42,7 +49,7 @@ namespace PDFCnetd.Pdf
                 foreach (string txt in Value.Split('\n'))
                 {
                     if (isRet) ret.AppendPdfLine(); else isRet = true;
-                    ret.AppendFormat("({0})", Value.Replace(@"\", @"\\").Replace("(", @"\(").Replace(")", @"\)"));
+                    ret.AppendFormat("({0})", Value.ToEscapeString());
                 }
             else
             {
@@ -66,7 +73,7 @@ namespace PDFCnetd.Pdf
                 foreach (string txt in Value.Split('\n'))
                 {
                     if (isRet) ret.AppendPdfLine(); else isRet = true;
-                    ret.AppendFormat("({0})", Value.Replace(@"\", @"\\").Replace("(", @"\(").Replace(")", @"\)"));
+                    ret.AppendFormat("({0})", Value.ToEscapeString());
                     ret.Append(terminatString);
                 }
             else

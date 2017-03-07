@@ -1,19 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PDFCnetd.Pdf
+﻿namespace PDFCnetd.Pdf
 {
+    /// <summary>
+    /// Pdf Element
+    /// </summary>
     public interface IPdfElem
     {
-
-        #region Property
-
-        string ClassName { get; }
-
-        #endregion
-
     }
 }

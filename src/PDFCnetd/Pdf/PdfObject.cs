@@ -1,16 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 
 namespace PDFCnetd.Pdf
 {
+    /// <summary>
+    /// Pdf Object
+    /// </summary>
     public class PdfObject
     {
 
         #region Constructor
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="no">Object Number</param>
+        /// <param name="elem">Object Value</param>
         public PdfObject(int no, IPdfElem elem)
         {
             ObjNumber = no;
@@ -23,9 +27,9 @@ namespace PDFCnetd.Pdf
 
         public int ObjNumber { get; set; }
 
-        public IPdfElem Element { get; set; }
+        public int ObjRev { get; set; }
 
-        public string ClassName { get; } = nameof(PdfObject);
+        public IPdfElem Element { get; set; }
 
         #endregion
 
@@ -34,7 +38,7 @@ namespace PDFCnetd.Pdf
         public override string ToString()
         {
             var ret = new StringBuilder();
-            ret.AppendPdfFormatLine("{0} 0 obj", ObjNumber);
+            ret.AppendPdfFormatLine("{0} {1} obj", ObjNumber, ObjRev);
             ret.AppendPdfLine(Element.ToString());
             ret.AppendPdfLine("endobj");
             return ret.ToString();

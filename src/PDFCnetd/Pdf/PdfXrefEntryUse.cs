@@ -1,18 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PDFCnetd.Pdf
+﻿namespace PDFCnetd.Pdf
 {
+    /// <summary>
+    /// Pdf XrefEntryUser
+    /// </summary>
     public class PdfXrefEntryUse
     {
 
-        private PdfXrefEntryUse(bool isFree)
-        {
-            IsFreeEntry = isFree;
-        }
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="isFree">is free</param>
+        private PdfXrefEntryUse(bool isFree) => IsFreeEntry = isFree;
 
         public bool IsFreeEntry { get; }
 

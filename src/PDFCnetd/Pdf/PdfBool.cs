@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PDFCnetd.Pdf
+﻿namespace PDFCnetd.Pdf
 {
+    /// <summary>
+    /// Pdf Bool
+    /// </summary>
     public class PdfBool : IPdfElem
     {
 
@@ -18,8 +15,6 @@ namespace PDFCnetd.Pdf
         #region Property
 
         public bool Value { get; set; }
-
-        public string ClassName { get; } = nameof(PdfBool);
 
         #endregion
 

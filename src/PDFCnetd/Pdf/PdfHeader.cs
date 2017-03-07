@@ -1,16 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace PDFCnetd.Pdf
 {
+    /// <summary>
+    /// Pdf Header
+    /// </summary>
     public class PdfHeader
     {
 
         #region Constructor
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="major">Major Version</param>
+        /// <param name="minor">Minor Version</param>
         public PdfHeader(int major, int minor) { PdfVersion = new Version(major, minor); }
 
         #endregion
@@ -18,8 +23,6 @@ namespace PDFCnetd.Pdf
         #region Property
 
         public Version PdfVersion { get; set; }
-
-        public string ClassName { get; } = nameof(PdfHeader);
 
         #endregion
 

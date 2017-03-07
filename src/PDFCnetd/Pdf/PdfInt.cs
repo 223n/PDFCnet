@@ -1,16 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PDFCnetd.Pdf
+﻿namespace PDFCnetd.Pdf
 {
+    /// <summary>
+    /// Pdf Int
+    /// </summary>
     public class PdfInt : IPdfElem
     {
 
         #region Constructor
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="value">Int Value</param>
         public PdfInt(int value) => Value = value;
 
         #endregion
@@ -18,8 +19,6 @@ namespace PDFCnetd.Pdf
         #region Property
 
         public int Value { get; set; }
-
-        public string ClassName { get; } = nameof(PdfInt);
 
         #endregion
 
