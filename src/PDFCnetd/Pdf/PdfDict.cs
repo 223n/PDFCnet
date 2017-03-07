@@ -7,20 +7,15 @@ using System.Threading.Tasks;
 
 namespace PDFCnetd.Pdf
 {
+    /// <summary>
+    /// Pdf Dictionary
+    /// </summary>
     public class PdfDict : IPdfElem, IDictionary<string, IPdfElem>
     {
-
-        #region Constructor
-
-        public PdfDict() { }
-
-        #endregion
 
         #region Field
 
         private Dictionary<string, IPdfElem> fDic = new Dictionary<string, IPdfElem>();
-
-        private bool fIsReadOnly = false;
 
         #endregion
 
@@ -34,9 +29,7 @@ namespace PDFCnetd.Pdf
 
         public int Count => fDic.Count;
 
-        public bool IsReadOnly => fIsReadOnly;
-
-        public string ClassName { get; } = nameof(PdfDict);
+        public bool IsReadOnly => false;
 
         #endregion
 

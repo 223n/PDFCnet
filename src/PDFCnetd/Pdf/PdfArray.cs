@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace PDFCnetd.Pdf
 {
-    public class PdfArray : IPdfElem, IEnumerable<IPdfElem>
+    /// <summary>
+    /// Pdf Array
+    /// </summary>
+    public class PdfArray : IPdfElem, IList<IPdfElem>
     {
 
         #region Constructor
@@ -18,9 +18,13 @@ namespace PDFCnetd.Pdf
 
         #region Property
 
-        public List<IPdfElem> Value { get; set; } = new List<IPdfElem>();
+        private List<IPdfElem> Value { get; set; } = new List<IPdfElem>();
 
-        public string ClassName { get; } = nameof(PdfArray);
+        public int Count => Value.Count;
+
+        public bool IsReadOnly => false;
+
+        public IPdfElem this[int index] { get => Value[index]; set => Value[index] = value; }
 
         #endregion
 
@@ -36,6 +40,22 @@ namespace PDFCnetd.Pdf
         public IEnumerator<IPdfElem> GetEnumerator() => Value.GetEnumerator();
 
         IEnumerator IEnumerable.GetEnumerator() => Value.GetEnumerator();
+
+        public int IndexOf(IPdfElem item) => Value.IndexOf(item);
+
+        public void Insert(int index, IPdfElem item) => Value.Insert(index, item);
+
+        public void RemoveAt(int index) => Value.RemoveAt(index);
+
+        public void Add(IPdfElem item) => Value.Add(item);
+
+        public void Clear() => Value.Clear();
+
+        public bool Contains(IPdfElem item) => Value.Contains(item);
+
+        public void CopyTo(IPdfElem[] array, int arrayIndex) => Value.CopyTo(array, arrayIndex);
+
+        public bool Remove(IPdfElem item) => Value.Remove(item);
 
         #endregion
 

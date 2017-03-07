@@ -1,16 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace PDFCnetd.Pdf
 {
-    public static class PdfCreater
+    /// <summary>
+    /// PDF Creator
+    /// </summary>
+    public static class PdfCreator
     {
 
         #region Method
 
+        /// <summary>
+        /// 文字列からPDFを生成します
+        /// </summary>
+        /// <param name="texts">文字列</param>
+        /// <returns>PDFファイル</returns>
         public static PdfFile TextsToPdf(string[] texts)
         {
             var file = new PdfFile(1, 7, 1);
@@ -37,6 +43,10 @@ namespace PDFCnetd.Pdf
             return file;
         }
 
+        /// <summary>
+        /// Create Catalog
+        /// </summary>
+        /// <returns>Catalog</returns>
         private static PdfObject CreateCatalog()
         {
             var dic = new PdfDict();
@@ -46,6 +56,12 @@ namespace PDFCnetd.Pdf
             return ret;
         }
 
+        /// <summary>
+        /// Create TopPage
+        /// </summary>
+        /// <param name="m">Start Object Number</param>
+        /// <param name="n">Page Nums</param>
+        /// <returns>Pages</returns>
         private static PdfObject CreateTopPage(int m, int n)
         {
             var dic = new PdfDict();
@@ -56,6 +72,10 @@ namespace PDFCnetd.Pdf
             return ret;
         }
 
+        /// <summary>
+        /// Create Font
+        /// </summary>
+        /// <returns>Font</returns>
         private static PdfObject CreateFont()
         {
             var dicDetail = new PdfDict();
@@ -75,6 +95,10 @@ namespace PDFCnetd.Pdf
             return ret;
         }
 
+        /// <summary>
+        /// Create Cid Font
+        /// </summary>
+        /// <returns>Font</returns>
         private static PdfObject CreateCidFont()
         {
             var cidDic = new PdfDict();
@@ -91,6 +115,10 @@ namespace PDFCnetd.Pdf
             return ret;
         }
 
+        /// <summary>
+        /// Create Font Descriptor
+        /// </summary>
+        /// <returns>FontDescriptor</returns>
         private static PdfObject CreateFontDescriptor()
         {
             var dic = new PdfDict();
@@ -107,6 +135,12 @@ namespace PDFCnetd.Pdf
             return ret;
         }
 
+        /// <summary>
+        /// Create Pages
+        /// </summary>
+        /// <param name="m">Start Page Object Number</param>
+        /// <param name="n">Page Num</param>
+        /// <returns>Page Array</returns>
         private static List<PdfObject> CreatePages(int m, int n)
         {
             var ret = new List<PdfObject>();
@@ -124,6 +158,13 @@ namespace PDFCnetd.Pdf
             return ret;
         }
 
+        /// <summary>
+        /// Create Contents
+        /// </summary>
+        /// <param name="m">Start Page Object Number</param>
+        /// <param name="n">Page Num</param>
+        /// <param name="texts">Text Value Array</param>
+        /// <returns>String Array</returns>
         private static List<PdfObject> CreateContents(int m, int n, string[] texts)
         {
             var ret = new List<PdfObject>();

@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PDFCnetd.Pdf
+﻿namespace PDFCnetd.Pdf
 {
+    /// <summary>
+    /// Pdf Null
+    /// </summary>
     public class PdfNull : IPdfElem
     {
-
         public override string ToString() => "null";
-
-        public string ClassName { get; } = nameof(PdfNull);
-
     }
 }

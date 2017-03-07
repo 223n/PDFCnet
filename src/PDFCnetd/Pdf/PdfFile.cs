@@ -1,22 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace PDFCnetd.Pdf
 {
+    /// <summary>
+    /// Pdf File
+    /// </summary>
     public class PdfFile
     {
 
         #region Constructor
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="header">Header</param>
+        /// <param name="rootRef">Root Object Number</param>
         public PdfFile(PdfHeader header, int rootRef)
         {
             Header = header;
             RootRef = rootRef;
         }
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="major">Majour Version</param>
+        /// <param name="minor">Minor Version</param>
+        /// <param name="rootRef">Root Object Number</param>
         public PdfFile(int major, int minor, int rootRef)
         {
             Header = new PdfHeader(major, minor);
@@ -33,8 +44,6 @@ namespace PDFCnetd.Pdf
 
         public List<PdfObject> PdfObjects { get; set; } = new List<PdfObject>();
 
-        public string ClassName { get; } = nameof(PdfFile);
-
         #endregion
 
         #region Method
@@ -42,10 +51,7 @@ namespace PDFCnetd.Pdf
         public override string ToString()
         {
             var ret = new StringBuilder();
-
             ret.Append(Header.ToString());
-            ret.AppendPdfLine();
-
             var xref = new PdfXref();
             xref.Value.Add(new PdfXrefEntry(0, 65535, PdfXrefEntryUse.FreeEntry));
             int offset = Encoding.GetEncoding("Shift-JIS").GetByteCount(Header.ToString());
@@ -54,7 +60,6 @@ namespace PDFCnetd.Pdf
                 xref.Value.Add(new PdfXrefEntry(offset, 0, PdfXrefEntryUse.InUseEntry));
                 string str = obj.ToString();
                 ret.Append(str);
-                ret.AppendPdfLine();
                 offset += Encoding.GetEncoding("Shift-JIS").GetByteCount(str);
             }
             ret.Append(xref.ToString());

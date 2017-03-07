@@ -1,16 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace PDFCnetd.Pdf
 {
+    /// <summary>
+    /// Pdf Name
+    /// </summary>
     public class PdfName : IPdfElem
     {
 
         #region Construcotr
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="text">Pdf Name</param>
         public PdfName(string text) => Value = text;
 
         #endregion
@@ -18,8 +22,6 @@ namespace PDFCnetd.Pdf
         #region Property
 
         public string Value { get; set; }
-
-        public string ClassName { get; } = nameof(PdfName);
 
         #endregion
 
